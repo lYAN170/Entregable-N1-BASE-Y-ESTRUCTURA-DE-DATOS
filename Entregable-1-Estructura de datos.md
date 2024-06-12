@@ -1,3 +1,8 @@
+
+| EXPLICACION | SE REALIZARA EN CADA FUNCION A DESARROLLAR DE LA ACTIVIDAD PROPUESTA:  |
+| ----------- | ----------- |
+
+
 # Entregable N° 1
 
 
@@ -75,6 +80,9 @@
 
 ---
 
+| FUNCION | declara una variable para almacenar el número de un departamento específico (7) y luego selecciona todos los registros de la tabla Emp que cumplen dos condiciones: que la fecha de alta sea anterior           al 1 de enero de 2018 y que el número de departamento sea igual a 7. |
+| ----------- | ----------- |
+
     DECLARE @DeptNo INT = 7
     SELECT *
     FROM Emp
@@ -104,6 +112,10 @@
 
 ---
 ### Crear un procedimiento para devolver el apellido, oficio y salario, pasándole como parámetro el número del empleado.
+
+| FUNCION | define un procedimiento almacenado llamado InsertEmp que inserta un nuevo empleado en la tabla Emp. Luego, se ejecuta este procedimiento para insertar un registro con los datos proporcionados:  |
+| ----------- | ----------- |
+
     CREATE PROCEDURE InsertEmp
     @Emp_No INT,
     @Apellido NVARCHAR(50),
@@ -124,6 +136,10 @@
 
 
 ---
+
+| FUNCION |un procedimiento almacenado llamado UpdateEmp que inserta un nuevo empleado en la tabla Emp. Luego, se ejecuta este procedimiento para insertar un registro con los datos proporcionados.  |
+| ----------- | ----------- |
+
     CREATE PROCEDURE UpdateEmp
         @Emp_No INT,
     @Apellido NVARCHAR(50),
@@ -145,6 +161,9 @@
 
 ---
 
+| FUNCION | proporciona una estructura básica para manejar transacciones en SQL. Se inicia una transacción con BEGIN TRANSACTION y luego se deshace con ROLLBACK, revirtiendo cualquier cambio hecho durante la transacción, y para manejar errores de manera controlada. |
+| ----------- | ----------- |
+
     BEGIN TRANSACTION
     ROLLBACK;
 
@@ -159,6 +178,8 @@
 
 ### Crear un procedimiento almacenado para dar de baja a un empleado pasándole como parámetro su apellido.
 
+| FUNCION | modifica el almacenado, Primero elimina el valor(apellido) de la columna y luego establece el valor de la columna Apellido a NULL para todos los empleados cuyo apellido coincida con el valor proporcionado. |
+| ----------- | ----------- |
     ALTER PROCEDURE DeleteEmp
     @Apellido NVARCHAR(50)
       AS
@@ -180,11 +201,17 @@
 ## Crear restricciones al modelo de BD, para asegurar la calidad de la información.
 ### Se procede a crear restricciones para los datos almacenados en la base de datos.
 
+| FUNCION | añade restricciones de unicidad a las tablas Emp, Dept y Enfermo en la base de datos. Estas restricciones garantizan que los valores en las columnas sean únicos, evitando duplicados en estas columnas. Las restricciones ayudan a mantener la integridad de los datos en la base de datos.|
+| ----------- | ----------- |
+
     ALTER TABLE [dbo].[Emp] ADD CONSTRAINT UQ_Emp_Emp_No UNIQUE (Emp_No)
 
     ALTER TABLE [dbo].[Dept] ADD CONSTRAINT UQ_Dept_Dept_No UNIQUE (Dept_No)
 
     ALTER TABLE [dbo].[Enfermo] ADD CONSTRAINT UQ_Enfermo_Inscripcion UNIQUE (Inscripcion)
+
+| EXPLICACIÓN | Al momento de insertar nuevos datos, no se permitiran ya que esta restringido para mantener la integridad de la base de datos.|
+| ----------- | ----------- |
 
 ![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/ee55039e-2f95-43a0-b510-5301d7e4498f)
 
