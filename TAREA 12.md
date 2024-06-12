@@ -250,7 +250,9 @@
 ![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/8a27c27f-2875-405e-8e2a-e87bdcf0db44)
 
 
--- 18
+## 18.	Promedio del monto total de transacciones de ventas en el año 2009:
+### ¿Cuál es el promedio del monto total de todas las transacciones de ventas registradas en la base de datos en el año 2009, expresado en moneda local (soles peruanos)?
+
 
     DECLARE @fecha_inicio datetime = '2009-01-01';
     DECLARE @fecha_fin datetime = '2009-12-31';
@@ -259,7 +261,12 @@
     FROM [ve].[documento]
     WHERE fechaMovimiento BETWEEN @fecha_inicio AND @fecha_fin;
 
--- 19
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/ea420cb2-5b5d-4741-af4c-6e72a1569124)
+
+
+## 19.	Documentos de ventas con monto total superior al promedio en el año 2005:
+### Obtén una lista de todos los documentos de ventas cuyo monto total supere el promedio del monto total de todos los documentos de ventas registrados en la base de datos en el año 2005.
+
 
     DECLARE @promedio MONEY;
 
@@ -268,8 +275,12 @@
     FROM [ve].[documento]
     WHERE total > @promedio AND YEAR(fechaMovimiento) = 2005;
 
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/671e59ce-81b7-47e7-992b-b03cfb6c4053)
 
--- 20
+
+## 20.	Documentos de ventas pagados con una forma de pago específica en el año 2006:
+### Listar los documentos de ventas que han sido pagados utilizando una forma de pago específica desde la tabla documentoPago en el año 2006.
+
 
     SELECT d.*
     FROM [ve].[documentoPago] dp
@@ -278,8 +289,12 @@
     WHERE YEAR(d.fechaMovimiento) = 2006
       ORDER BY d.total;
 
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/d20ee8be-05b2-4cfa-b97b-ece56f901103)
 
--- 21
+
+## 21.	Detalles de documentos de ventas canjeados en el año 2007:
+### ¿Cómo se distribuye el saldo total entre los diferentes almacenes, considerando la información de los saldos iniciales de inventario en la base de datos en el año 2007?
+
 
     DECLARE @fecha_inicio_2007 DATETIME = '2007-01-01';
 
@@ -288,8 +303,13 @@
     WHERE YEAR(@fecha_inicio_2007) = 2007 GROUP BY almacen
     ORDER BY almacen
 
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/04e54174-d851-4dd4-9cd9-3c57801f2790)
 
--- 22
+
+
+## 22.	Saldo total distribuido por almacén en el año 2008:
+### Obtén una lista de todos los documentos de ventas cuyo monto total supere el promedio del monto total de todos los documentos de ventas registrados en la base de datos en el año 2008.
+
 
     DECLARE @promedio MONEY;
 
@@ -299,7 +319,11 @@
     FROM [ve].[documento]
     WHERE total > (SELECT @promedio) AND YEAR(fechaMovimiento) = 2008;
 
--- 23
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/4a0c6f4d-d83b-4f63-9431-046cbe8244a5)
+
+## 23.	Detalles de documentos de ventas por vendedor en el año 2009:
+### ¿Cuáles son los detalles de los documentos de ventas asociados al vendedor con identificación número 3 en la base de datos en el año 2009, considerando la información detallada de cada documento en relación con sus elementos de venta?
+
 
     SELECT d.*, 
        dd.*, 
@@ -309,7 +333,12 @@
     WHERE d.vendedor = 3 AND YEAR(d.fechaMovimiento) = 2009
     ORDER BY d.total;
 
--- 24
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/7688e0ad-55d8-496f-8572-8de80ea0fee0)
+
+
+## 24.	Total de ventas por año y vendedor en el año 2008:
+### ¿Cuál es el total de ventas por año y vendedor en la base de datos de ventas, considerando solo aquellos vendedores cuya suma total de ventas en el año 2008 sea superior a 100,000 unidades monetarias?
+
 
     SELECT vendedor, 
        YEAR(fechaMovimiento) AS Anio, 
@@ -320,8 +349,13 @@
     HAVING SUM(total) > 100000
     ORDER BY Total_Ventas;
 
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/d91cefac-3c23-4fc1-8899-8be7fb46d13d)
 
--- 25
+
+
+## 25.	Desglose mensual de ventas por vendedor en el año 2009:
+### ¿Cuál es el desglose mensual de las ventas por vendedor en cada año, considerando la suma total de ventas para cada mes y año específico en el año 2009?
+
 
     SELECT vendedor, 
        YEAR(fechaMovimiento) AS Anio, 
@@ -332,8 +366,12 @@
     GROUP BY vendedor, YEAR(fechaMovimiento), MONTH(fechaMovimiento)
     ORDER BY Anio, Mes, Total_Ventas;
 
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/11b5b59f-2789-4766-ad63-0bf1170a643d)
 
--- 26
+
+## 26.	Clientes que compraron más de 10 veces en un año en el año 2005:
+### ¿Cuántos clientes compraron más de 10 veces en un año en el año 2005?
+
 
     SELECT persona, 
        YEAR(fechaMovimiento) AS Año, 
@@ -343,7 +381,24 @@
     GROUP BY persona, YEAR(fechaMovimiento)
   HAVING COUNT(*) > 10;
 
--- 27
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/9e099b62-92ff-4e78-a75f-3999a637d073)
+
+
+## 27.	Total acumulado de descuentos por vendedor en el año 2006:
+### ¿Cuál es el total acumulado de descuentos aplicados por cada vendedor en la base de datos de ventas, considerando la suma de los descuentos descto01, descto02 y descto03, y mostrando solo aquellos vendedores cuyo total de descuentos acumulados supere los 5000 en el año 2005?
+
+
+    SELECT vendedor, 
+       SUM(descto01 + descto02 + descto03) AS Descuentos_Acumulados
+    FROM ve.documento
+    WHERE YEAR(fechaMovimiento) = 2005
+    GROUP BY vendedor
+    HAVING SUM(descto01 + descto02 + descto03) > 5000;
+
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/dba647f9-3393-4bc0-a10d-e14fe2e99150)
+
+## 28.- Total anual de ventas por persona en el año 2007:
+### ¿Cuál es el total anual de ventas realizadas por cada persona en la base de datos de ventas, considerando únicamente los movimientos de tipo venta (tipoMovimiento = 1), y mostrando solo aquellas personas cuyas ventas anuales superen los 10000 en el año 2007?
 
     SELECT vendedor, 
        SUM(descto01 + descto02 + descto03) AS Descuentos_Acumulados
@@ -353,17 +408,12 @@
     HAVING SUM(descto01 + descto02 + descto03) > 5000;
 
 
--- 28
-
-    SELECT vendedor, 
-       SUM(descto01 + descto02 + descto03) AS Descuentos_Acumulados
-    FROM ve.documento
-    WHERE YEAR(fechaMovimiento) = 2005
-    GROUP BY vendedor
-    HAVING SUM(descto01 + descto02 + descto03) > 5000;
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/8c3a2361-a454-4ef2-aab9-4963f0558bbf)
 
 
--- 29
+## 29.- Recuento total de productos vendidos por vendedor en el año 2008:
+### ¿Cuál es el recuento total de productos vendidos por cada vendedor en la base de datos de ventas en el año 2008?
+
 
     SELECT 
        d.vendedor, 
@@ -378,7 +428,11 @@
         d.vendedor;
 
 
-	-- 30 
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/2fdf8755-8e9c-42e5-8e00-221521ce3460)
+
+## 30.	Ventas mensuales desglosadas por tipo de pago en el año 2009:
+### ¿Cuánto se vendió cada mes del año 2009, desglosado por tipo de pago?
+
 
     	SELECT 
         YEAR(fechaMovimiento) AS Año,
@@ -395,3 +449,7 @@
         YEAR(fechaMovimiento),
         MONTH(fechaMovimiento),
         p.formaPago;
+
+
+ ![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/8708d8e5-6fc3-4f44-b8cd-6e475dd07558)
+
