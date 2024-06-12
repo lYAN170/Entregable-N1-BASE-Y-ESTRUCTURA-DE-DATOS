@@ -1,4 +1,4 @@
-[anchor](https://enlace.tld "título")
+[TAREA 12](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/blob/main/Estructura%20de%20datos.md "título")
 
 
 # Entregable N° 1
