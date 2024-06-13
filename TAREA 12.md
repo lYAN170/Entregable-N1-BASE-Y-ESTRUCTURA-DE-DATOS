@@ -1,6 +1,21 @@
+
+
 ## TAREA 12 
 ### PROCESOS DE EJECUCION DE CONSULTAS REALIZAS DE LAS 30 PREGUNTAS QUE SE REALIZARAN EN SQL SERVER DE LA BASE DE DATOS: RETAIL.
 
+
+
+| Tipos D. | Descripción                    |
+| ------------- | ------------------------------ |
+| `Declare:`      | Estas variables permiten almacenar valores temporales, que pueden ser utilizados posteriormente en consultas.       |
+| `SELECT:`      | Selecciona las columnas que quiero .       |
+| `es-PE`   | es representa en soles peruanos.     |
+| `WHERE:`   | Filtra los datos y se utiliza para especificar condiciones que deben cumplirse para que   una fila sea incluida en el resultado de la consulta.     |
+| `SELECT:`      | Esto especifica las columnas que queremos incluir en el resultado de la consulta.       |
+| `FROM:`   | Esto indica que la tabla principal de la que se van a seleccionar los datos, La letra E. esta mencionando a una tabla.     |
+| `JOIN:`   | Esta especificando la condición de unión de 2 tablas.     |
+| `Order BY:`   | para ordenar los resultados de una consulta en un orden específico, ya sea ascendente o descendente.     |
+| `INNER JOIN:`   | se utiliza para combinar filas de dos o más tablas basadas en una condición que especifica cómo se deben relacionar las filas de las tablas involucradas. Solo se devuelven las filas que cumplen con la condición de la unión.     |
 
 
 ## 1.- 1.	Total, de ventas en el año 2009:
