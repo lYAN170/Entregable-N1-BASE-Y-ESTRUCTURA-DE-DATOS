@@ -1,3 +1,11 @@
+## ACTIVIDAD ENTREGABLE N° 2
+
+[ACTIVIDAD ENTREGABLE N° 2](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/blob/main/TAREA%2012.md "título")
+
+
+---
+
+
 # Actividades Desarrolladas de curso.
 
 [TAREA 12](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/blob/main/TAREA%2012.md "título")
