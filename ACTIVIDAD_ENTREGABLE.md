@@ -130,4 +130,6 @@ VENTASBD
 
 
 
+![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/3192911a-28c2-4b39-a2f5-1e9a57cbb2cd)
+
 
