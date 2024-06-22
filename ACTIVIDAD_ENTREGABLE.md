@@ -106,6 +106,8 @@ VENTASBD
 ![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/c3d86277-8b22-49bf-9def-66a2c6f6c423)
 
 
+## ¿ que es trigger?
+### Es un como procedimiento almacenado que podria hacer un INSET, UPDATE, DELETE sobre una tabla 
 
 ### este trigger es una herramienta poderosa para automatizar y mantener la consistencia en el estado de las facturas dentro de tu sistema de base de datos
 
@@ -131,5 +133,15 @@ VENTASBD
 
 
 ![image](https://github.com/lYAN170/Entregable-N1-BASE-Y-ESTRUCTURA-DE-DATOS/assets/169726463/3192911a-28c2-4b39-a2f5-1e9a57cbb2cd)
+
+
+
+
+
+
+
+
+
+
 
 
